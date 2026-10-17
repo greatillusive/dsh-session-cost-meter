@@ -1,0 +1,29 @@
+# Session cost meter bundle: one Host projection plus the Client pill.
+- insert:
+    - id: session-cost-meter
+      name: '@local/session-cost-meter'
+      config:
+        # Prices are CNY per million tokens at PEAK time; off-peak prices are
+        # `offPeakFactor` times these. Unknown models fall back to
+        # `fallbackModel` and are marked as estimated (set it to null to leave
+        # them unpriced instead).
+        currency: CNY
+        offPeakFactor: 0.5
+        fallbackModel: deepseek-flash
+        timezone: Asia/Shanghai
+        peakWindows: ['09:00-12:00', '14:00-18:00']
+        peakWeekdays: [1, 2, 3, 4, 5]
+        prices:
+          deepseek-flash:
+            cacheHit: 0.04
+            cacheMiss: 2
+            output: 8
+          deepseek-v4-flash:
+            cacheHit: 0.04
+            cacheMiss: 2
+            output: 8
+          deepseek-v4-pro:
+            cacheHit: 0.30
+            cacheMiss: 9
+            output: 27
+        # holidays: ['2026-01-01', ...]  # defaults to the 2026 statutory list

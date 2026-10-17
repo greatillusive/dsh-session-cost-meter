@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Session Cost Meter",
+    "description": "Shows this session's estimated API cost under the composer, split by DeepSeek peak and off-peak pricing."
+  }
+}

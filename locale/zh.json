@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "会话费用计",
+    "description": "在输入框下方显示当前会话的 API 费用估算，并按 DeepSeek 峰谷价分开计算。"
+  }
+}
